@@ -1,51 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>ITBANK Homebanking</title>
-</head>
-<body>
-    
-<div class="contenedor"> 
-    <div class="menu">
-        <img class="logo_itbank" src="img/w.png" >   
-            
-    </div>
-    
-    {% block content %}
-
-    <div class="bienvenido">
-        <img class="imagen_homebanking" src="img/homebanking.jpg" >
-
-    </div>
-    <div class="login">
-    <section class="form-register">
-        <img class="logo_mini" src="img/ty.png">
-        <h4>Ingrese a su HomeBanking</h4>
-        <form action="Formulario" method="post"> </form>
-            <label for="Usuario">Usuario</label>
-            <input class="controls" type="text" id="Usuario" name="Usuario" placeholder="Ingrese su usuario o DNI"/> 
-            <br>
-            <label for="password">Contraseña</label>
-            <input class="controls" type="password" id="password" name="password" placeholder="Ingrese su contraseña"/> 
-            <p> <a href="olvidocontra.html">¿Olvidaste tu contraseña?</a></p>
-            <a href="principal.html"> <button class="botons" type="submit"> Ingresar</button> </a>
-            <p> <a href="registro.html">¿Primera vez que ingresás?</a></p>
-
-        </form>
-
-    </section>
-    </div>
-</div>
-
+{% extends 'utils/base.html' %}
+{% block content %}
+  <body class="bg-secondary">
+    <form class="container">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </body>
 {% endblock %}
-</body>
-</html>

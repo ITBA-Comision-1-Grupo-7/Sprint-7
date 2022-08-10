@@ -1,0 +1,214 @@
+
+ *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    text-shadow:0px 1px 0px #000000;
+    
+} 
+
+body {
+    color: #000;
+    background: rgb(2,86,138);
+    background: linear-gradient(90deg, rgba(2,86,138,1) 2%, rgba(106,155,186,1) 54%);
+    
+
+    
+
+
+}
+
+.contenedor {
+    width:  100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    
+
+
+
+}
+.contenedor > div,
+.contenedor .menu
+.contenedor .footer {
+    
+    padding: 1.3em;
+    border-radius: 4px;
+    
+    
+
+}
+.contenedor .menu {
+    background: #02568A;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 0; 
+    width: 100%;
+    height: 6em;
+    
+    
+    
+
+}
+
+.contenedor .bienvenido {
+    width: 10em;
+    height: 20em;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-top: 10em;
+    
+
+
+
+}
+
+.logo_itbank {
+    width: 10em;
+    height: 7em;
+    position: absolute;
+    left: 44%;
+    padding: 0%;
+    margin-top: -0.6em;
+   
+    
+}
+
+.imagen_homebanking {
+    width: 60em;
+    height: 25em;
+    border-radius: 40px;
+    box-shadow: 12px 12px 12px 1px rgba(54,54,54,0.69);
+    -webkit-box-shadow: 12px 12px 12px 1px rgba(54,54,54,0.69);
+    -moz-box-shadow: 12px 12px 12px 1px rgba(54,54,54,0.69);
+    margin-left: 8em;
+}
+
+.contenedor .login {
+    background: rgb(2,86,138);
+    background: linear-gradient(180deg, rgba(2,86,138,1) 30%, rgba(88,143,178,1) 76%);
+    color: #fff;
+    grid-column: 2 / 2;
+    text-align: center;
+    margin-top: 10em;
+    margin-left: 7em;
+    -webkit-box-shadow: 4px 6px 23px -8px #000000; 
+    box-shadow: 4px 6px 23px -8px #000000;
+    width: 30em;
+    border-radius: 26px;
+    
+    
+}
+.contenedor .bienvenido {
+    width: 100%;
+}
+
+.form-register {
+    width: 25em;
+    text-shadow:0px 1px 0px #0c1418;
+    padding: 2.5em;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    
+}
+
+.form-register h4 {
+    font-size: 1.6em;
+    margin-bottom: 1.2em;
+}
+.controls {
+    width: 100%;
+    background:#b1bdd6;
+    padding: 0.9em;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    border: 1px solid #0087AB;
+    font-size: 1.1em;
+    color: black; 
+    text-shadow:0px 1px 0px #94a1a5;
+}
+.form-register p {
+    text-align: center;
+    font-size: 1em;
+    
+}
+.form-register a {
+    color: white;
+    text-decoration: none;
+
+}
+.form-register a:hover {
+    color: white;
+    text-decoration: underline;
+}
+.form-register .botons {
+    width: 106%;
+    margin: 1em;
+    margin-left: -0.1em;
+    font-size: 1em;
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to top, rgba(88,143,178,1)5%, rgba(2,86,138,1) 100%);
+    background-color:#599bb3;
+    border-radius:8px;
+    border: none;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-weight:bold;
+    padding:1em 2em;
+    text-shadow:0px 1px 0px #3d768a;
+    }
+    
+    .botons:hover {
+        background:linear-gradient(to bottom, rgba(88,143,178,1)5%, rgba(2,86,138,1) 100%);
+        background-color:#408c99;
+    }
+    .botons:active {
+        position:relative;
+        
+    }
+
+.ayuda {
+       
+        
+        font-size: 1em;
+        height: 4em;
+        width: 11.5em;
+        box-shadow: 0px 10px 14px -7px #276873;
+        background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+        background-color:#599bb3;
+        border-radius:15px;
+        border: none;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-weight:bold;
+        padding:1em 2em;
+        text-shadow:0px 1px 0px #3d768a;
+        position: absolute;
+        
+        
+        }
+        
+        .ayuda:hover {
+            background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+            background-color:#408c99;
+        }
+        .ayuda:active {
+            position:relative;
+            top:1px;
+        }
+
+.link_mesa {
+    margin-top: 1em;
+    margin-left: 105em;
+    position: absolute;
+}
+
+.logo_mini {
+    width: 6em;
+    position: relative;
+    margin-top: -2em;
+    margin-left: 1em;
+}

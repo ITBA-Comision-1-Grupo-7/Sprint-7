@@ -37,7 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homebanking'
+    'homebanking',
+    'clientes',
+    'cuentas',
+    'login',
+    'prestamos',
+    'tarjetas',
+    'utils'
 ]
 
 MIDDLEWARE = [

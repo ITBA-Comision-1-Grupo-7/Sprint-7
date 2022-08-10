@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background: rgb(2, 86, 138);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 86, 138, 1) 2%,
+    rgba(106, 155, 186, 1) 54%
+  );
+  color: #fff;
+}
+
+.logo_itbank {
+  width: 12em;
+  height: 9em;
+  left: 44%;
+  padding: 0%;
+  margin-left: 53em;
+  margin-top: -1.3em;
+}
+.logo_mini {
+  width: 8em;
+  margin-left: 4.5em;
+}
+
+.container-registro {
+  background: rgb(2, 86, 138);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 86, 138, 1) 30%,
+    rgba(88, 143, 178, 1) 76%
+  );
+  margin-left: 45em;
+  margin-top: 2em;
+  width: 21em;
+  height: 46em;
+  box-shadow: 23px 12px 13px 3px rgba(25, 24, 24, 0.73);
+  -webkit-box-shadow: 23px 12px 13px 3px rgba(25, 24, 24, 0.73);
+  -moz-box-shadow: 23px 12px 13px 3px rgba(25, 24, 24, 0.73);
+  padding-left: 5em;
+}
+
+.container-registro p {
+  text-shadow: 0px 1px 0px #3d768a;
+}
+.container-registro input {
+  background: #b1bdd6;
+  height: 1.7em;
+  width: 19em;
+  border-radius: 1em;
+  margin-top: 0.7em;
+  border: 1px rgba(88, 143, 178, 1) solid;
+}
+::placeholder {
+  font-weight: bold;
+  color: rgb(57, 57, 57);
+  text-shadow: 0px 1.5px 0px #94a1a5;
+  padding: 0.3em;
+}
+.sexo p {
+  margin-top: 0.7em;
+}
+
+.sexo {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+
+.botons {
+  width: 50%;
+  margin: 1em;
+  margin-left: 3em;
+  font-size: 1em;
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(
+    to top,
+    rgba(88, 143, 178, 1) 5%,
+    rgba(2, 86, 138, 1) 100%
+  );
+  background-color: #599bb3;
+  border-radius: 8px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 1em 2em;
+  text-shadow: 0px 1px 0px #3d768a;
+}
+
+.botons:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(88, 143, 178, 1) 5%,
+    rgba(2, 86, 138, 1) 100%
+  );
+  background-color: #408c99;
+}
+.botons:active {
+  position: relative;
+}
+
+.menu {
+  background: #02568a;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 0;
+  width: 100%;
+  height: 6em;
+}
+
+.registrarse,
+h4 {
+  text-shadow: 0px 2px 0px rgb(87, 87, 87);
+  margin-top: 0.3em;
+}
+
+.fecha {
+  font-weight: bold;
+  color: rgb(57, 57, 57);
+  text-shadow: 0px 1.5px 0px #94a1a5;
+}
+
+.titulito {
+    background: rgb(2, 86, 138);
+    background: linear-gradient(
+      180deg,
+      rgba(2, 86, 138, 1) 30%,
+      rgba(88, 143, 178, 1) 76%
+    );
+    margin-left: 41em;
+    margin-top: 13em;
+    width: 30em;
+    height: 15em;
+    box-shadow: 23px 12px 13px 3px rgba(25, 24, 24, 0.73);
+    -webkit-box-shadow: 23px 12px 13px 3px rgba(25, 24, 24, 0.73);
+    -moz-box-shadow: 23px 12px 13px 3px rgba(25, 24, 24, 0.73);
+    padding-top: 2em;
+    padding-left: 7em;
+  } 
+
+  .titulito .botons{
+      margin-top: 5em;
+  }
