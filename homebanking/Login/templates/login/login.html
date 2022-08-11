@@ -2,16 +2,18 @@
 
 {% load static %}
 
-
+{% block styles %} <link rel="stylesheet" href="{% static 'login/css/styles.css' %}"> {% endblock %}
 {% block title %} Login {% endblock %}
 
 
 {% block content %}
 
 <section>
+  
   <div class="row g-0">
     <div class="col-lg-7">
-    <img src="{% static 'img/undraw_mobile_pay_re_sjb8.svg' %}" class="d-block w-70 ms-5 ps-5 pt-5 my-4 " />   
+      {% load static %}
+    <img src="{% static 'login/img/loguito.svg' %}" class="d-block w-70 ms-5 ps-5 pt-5 my-4 " />   
     </div>
     <div class="col-lg-5 d-flex flex-column align-items-end min-vh-100  pt-5">
       <div class="d-block mx-auto mt-4">
@@ -67,6 +69,13 @@
   integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
   crossorigin="anonymous"
 ></script>
+
+<style>
+  body {
+    background-image: url('../../static/login/img/fondo.jpg');
+   
+  }
+</style>
 
     
 {% endblock %}
