@@ -1,0 +1,42 @@
+:root {
+
+    --bs-blue: #8ABBD6;
+    --bs-gray-dark: #515e6b;
+    --light: #ffffff;
+    --bs-dark: #56595f; 
+}
+
+.img-fluid {
+  height: 10em;
+}
+body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 300;
+  background-image: url("./media/fondo.jpg"); 
+  background-repeat: no-repeat;
+  background-size: 100%;  
+ 
+}
+
+.bg-bs-blue {
+  background-color: var(--bs-blue);
+}
+
+.form-control, .btn {
+    min-height:  3.125rem;
+    line-height: initial;
+}
+
+.bg-dark {
+    background-color: var(--bs-dark)
+}
+
+.btn { 
+    background-color:  #1690d1;
+   
+}
+
+.btn:hover {
+    background-color: #265baf;
+    transition: all ease 0.3s;
+}
