@@ -17,7 +17,8 @@
     </div>
     <div class="col-lg-5 d-flex flex-column align-items-end min-vh-100  pt-5">
       <div class="d-block mx-auto mt-4">
-        <img src="{% static 'img/ty.jpg' %}" class="img-fluid "/>
+        {% load static %}
+        <img src="{% static 'login/img/ty.jpg' %}" class="img-fluid "/>
       </div>
       <div class="px-lg-5 py-lg-4 p-4  w-100 align-self-center">
         <h1 class="fw-bold mb-4 d-flex justify-content-center">Bienvenido de vuelta</h1>
@@ -73,6 +74,9 @@
 <style>
   body {
     background-image: url('../../static/login/img/fondo.jpg');
+    background-size: cover;
+    
+    
    
   }
 </style>
