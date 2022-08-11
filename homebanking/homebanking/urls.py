@@ -24,10 +24,7 @@ from prestamos import views as prestamo_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', login_views.login, name="login"),
-    path('tarjetas/', tarjetas_views.Tarjeta, name="tarjetas")
-    path('prestamos/', prestamo_views.create_form_prestamos, name="prestamos")
-    
-
-    
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('', login_views.login, name="login"),
+    path('tarjetas/', tarjetas_views.Tarjeta, name="tarjetas"),
+    path('prestamos/', prestamo_views.create_form_prestamos.as_view(), name="prestamos")
+]
