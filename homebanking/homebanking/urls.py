@@ -19,13 +19,14 @@ from login import views as login_views
 from django.conf import settings
 from django.conf.urls.static import static
 from tarjetas import views as tarjetas_views
+from prestamos import views as prestamo_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login_views.login, name="login"),
-    path('clientes/', login_views.login, name="clientes"),
     path('tarjetas/', tarjetas_views.Tarjeta, name="tarjetas")
+    path('prestamos/', prestamo_views.create_form_prestamos, name="prestamos")
     
 
     
