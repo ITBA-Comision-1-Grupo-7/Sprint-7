@@ -22,7 +22,10 @@
       </div>
       <div class="px-lg-5 py-lg-4 p-4  w-100 align-self-center">
         <h1 class="fw-bold mb-4 d-flex justify-content-center">Bienvenido de vuelta</h1>
-        <form>
+        <form action="" method="post">{% csrf_token %}>
+          {% if form.non_field_errors %}
+          <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+          {% endif %}
           <div class="mb-4">
             <label for="exampleInputEmail1" class="form-label fw-bold"
               >Usuario o DNI</label
@@ -58,7 +61,7 @@
       </div>
       <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4  w-100 " >
 
-        <p class="d-inline-block mb-0 fw-bold">¿Todavía no tenes cuenta?</p> <a href="#" class="text-black fw-bold" > Registrate</a>
+        <p class="d-inline-block mb-0 fw-bold">¿Todavía no sos parte del banco?</p> <a href="#" class="text-black fw-bold" > Registrate</a>
     </div>
     </div>
     
