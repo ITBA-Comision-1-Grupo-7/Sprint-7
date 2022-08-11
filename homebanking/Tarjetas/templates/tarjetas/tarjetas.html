@@ -1,0 +1,43 @@
+{% extends 'utils/base.html' %}
+{% load static %}
+
+{% block title %}Pedí tu tarjeta ITBank {% endblock %}
+
+{% block background %}{% static '/utils/img/homebanking.jpg' %}{% endblock %}
+
+{% block headers %}
+    <h1>Tarjetas ITBank</h1>
+    <span class="subheading">Pedila ahora recibila en 24 horas</span>
+{% endblock %}
+
+
+{% block content %}
+{% if enviado %}
+<div class="col-lg-8 col-md-10 mx-auto">
+
+<p><b>Gracias por elegirnos! {{enviado}} !</b></p>
+<p><b>Si todo salio bien, en breve recibira su tarjeta ITBANK</b></p>
+
+</div>
+
+{% else %}
+
+<div class="row"> 
+    <div class="col-lg-8 col-md-10 mx-auto">
+    <!-- Formulario Tarjetas-->
+        <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            
+        <table>
+            {{form.as_p}}
+        </table>
+            
+        <input type="submit" value="Enviar"/>            
+        </div>    
+        </form>
+    
+    </div>
+</div>
+{% endif %}
+{% endblock %}
