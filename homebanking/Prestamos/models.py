@@ -2,9 +2,10 @@ from django.db import models
 
 # Create your models here.
 class Prestamos(models.Model):
-  nombre = models.CharField(max_length=20)
   apellido = models.CharField(max_length=20)
   fecha_inicio = models.DateField()
+  valor = models.IntegerField()
+  dni = models.CharField(max_length=9) 
   PRESTAMO_PERSONAL = "PP"
   PRESTAMO_ESTUDIANTE = "PE"
   PRESTAMO_COMERCIOS = "PC"

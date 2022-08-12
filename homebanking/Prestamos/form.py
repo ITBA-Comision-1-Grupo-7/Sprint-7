@@ -3,7 +3,7 @@ from .models import Prestamos
 import datetime
 
 class createPrestamo(forms.Form):
-    nombre = forms.CharField(label="Nombre", required=False)
+    dni = forms.CharField(label="DNI", required=True)
     apellido =forms.CharField(label="Apellido", required= True)
     fecha_inicio = forms.DateField(initial=datetime.date.today, widget = forms.HiddenInput())
     PRESTAMO_PERSONAL = "PP"
@@ -16,7 +16,7 @@ class createPrestamo(forms.Form):
       (PRESTAMO_COMERCIOS,"Prestamo_Comercios"),
       (PRESTAMO_HIPOTECARIO, "Prestamo_Hipotecario"),
     ] 
+    valor = forms.CharField(label='Valor del prestamo', initial=0, required= True)
     tipo_prestamo = forms.CharField(label='Tipo de prestamo',widget=forms.Select(choices=TIPO_PRESTAMO), initial=PRESTAMO_PERSONAL ,required=True)
     estado_prestamo= forms.BooleanField(label = 'Estado', initial= True)
     
-    # proyecto_id= forms.CharField(label='Que proyecto te intereso?', widget=forms.Select(choices=lista))
