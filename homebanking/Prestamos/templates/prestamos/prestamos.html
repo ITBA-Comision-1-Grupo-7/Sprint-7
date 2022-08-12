@@ -1,31 +1,30 @@
-{% extends 'utils/base.html' %} 
-{% load static %} 
-{% block styles %}
-<link rel="stylesheet" href="{% static 'prestamos/css/styles.css' %}" /> 
-{%endblock %}
- {%block content %} 
+{% extends 'utils/base.html' %} {% load static %} {% block styles %}
+<link rel="stylesheet" href="{% static 'prestamos/css/styles.css' %}" />
+{%endblock %} {%block content %}
 
-{% if enviado %}
-<div class="col-lg-8 col-md-10 mx-auto">
-  <p><b>Gracias {{enviado}} !</b></p>
-  <p>
-    <b
-      >Tu prestamo fue solicitado correctamente, en breve nos pondremos en
-      contacto</b
-    >
-  </p>
-</div>
 
-{% else %}
-<div class="container">
-  <form method="POST">
-   {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" class="btn btn-info border-5 text-white">
-      Submit
-    </button>
-  </form>
-</div>
-{% endif %}
+{% if enviado and flag %} 
+   <div class="col-lg-8 col-md-10 mx-auto">
+      <p><b>Gracias {{enviado}} !</b></p>
+      <p>
+         <b
+            >Tu prestamo fue solicitado correctamente, en breve nos pondremos en
+            contacto</b
+         >
+      </p>
+   </div>
+{% elif not enviado %}
+   <div class="container">
+   <form method="POST">
+      {% csrf_token %} {{form.as_p}}
+      <button type="submit" class="btn btn-info border-5 text-white">
+         Submit
+      </button>
+   </form>
+   </div>
+{% elif not flag %}
+      <p>No podes pedir tanta guita </p>
+
+{% endif %} 
 
 {% endblock %}
