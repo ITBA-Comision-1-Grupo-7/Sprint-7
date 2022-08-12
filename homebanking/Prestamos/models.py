@@ -15,7 +15,7 @@ class Prestamos(models.Model):
     (PRESTAMO_COMERCIOS,"Prestamo_comercios"),
     (PRESTAMO_HIPOTECARIO, "Prestamo_hipotecario"),
 ] 
-  tipo_prestamo = models.CharField(max_length=2, choices=TIPO_PRESTAMO, default= PRESTAMO_PERSONAL)
+  tipo_prestamo = models.CharField(max_length=2, choices=TIPO_PRESTAMO, default = PRESTAMO_PERSONAL)
   estado_prestamo = models.BooleanField(default=True)
 
 

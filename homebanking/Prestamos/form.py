@@ -16,7 +16,7 @@ class createPrestamo(forms.Form):
       (PRESTAMO_COMERCIOS,"Prestamo_comercios"),
       (PRESTAMO_HIPOTECARIO, "Prestamo_hipotecario"),
     ] 
-    tipo_prestamo = forms.CharField(label='Tipo de prestamo',choices=TIPO_PRESTAMO, default= PRESTAMO_PERSONAL,required=True)
-    estado_prestamo= forms.BooleanField(label = 'estado', default=True )
+    tipo_prestamo = forms.CharField(label='Tipo de prestamo',widget=forms.Select(choices=TIPO_PRESTAMO), initial=PRESTAMO_PERSONAL ,required=True)
+    estado_prestamo= forms.BooleanField(label = 'estado', initial= True)
     
-    proyecto_id= forms.CharField(label='Que proyecto te intereso?', widget=forms.Select(choices=lista))
+    # proyecto_id= forms.CharField(label='Que proyecto te intereso?', widget=forms.Select(choices=lista))

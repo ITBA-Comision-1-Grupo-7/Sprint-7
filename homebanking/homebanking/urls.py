@@ -26,5 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', login_views.login, name="login"),
     path('tarjetas/', tarjetas_views.Tarjeta, name="tarjetas"),
-    path('prestamos/', prestamo_views.create_form_prestamos.as_view(), name="prestamos")
+    path('prestamos/', prestamo_views.prestamo, name="prestamos")
 ]

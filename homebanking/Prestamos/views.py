@@ -4,12 +4,11 @@ from .models import Prestamos
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
-from .models import Contact
 from django.contrib.auth.decorators import login_required
 
 #usamos el decorador
 # @login_required
-def contact(request):
+def prestamo(request):
     contact_form = createPrestamo
     if request.method == "POST":
         #Traemos los datos enviados
@@ -23,5 +22,5 @@ def contact(request):
             estado = request.POST.get('estado')
             prestamo = Prestamos(nombre= nombre, apellido= apellido ,fecha_inicio= fecha_inicio, tipo_prestamo=tipo_prestamo,estado= estado)
             prestamo.save()
-            return render(request,'contact/contact.html',{'enviado': apellido})   
-    return render(request,'contact/contact.html',{'form': contact_form})
+            return render(request,'prestamos/prestamos.html',{'enviado': apellido})   
+    return render(request,'prestamos/prestamos.html',{'form': contact_form})
