@@ -1,0 +1,105 @@
+{% extends 'utils/base.html' %}
+{%load static%}
+{%block styles%} <link rel='stylesheet' href="{%static 'cuentas/css/styles.css' %}"> {% endblock %}
+{%block styles%} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> {%endblock%}
+{%block title%} Estado de Cuenta {%endblock%}
+{%block content %}
+
+<section>
+    <div id="front-titulo">
+      Estado de cuentas
+    </div>
+    <hr>
+    <div class="grid-container" id="cuentatarjeta">
+      <div class="container">
+          <div class="col"><div class="col" id="titulo">Cuenta</div></div>
+          <hr>
+          <div class="container" id="containercuenta">
+            <div class="row">Cliente:</div>
+            <div class="row">Tipo de cuenta:</div>
+            <div class="row">Saldo:
+            <div class="col" id="saldo">$15 202⁹³</div>
+              </div>
+          </div>
+        <div class="col" id="cbu">Consultar CBU / Alias   
+            {% load static %}
+            <img src="{% static cuentas/img/cbu.png %}" style="height:19px"></div>
+      </div>
+
+    <div id="spacer"></div>
+
+    <div class="bgtarjetacont">
+      <div class="grid-container" id="tarjetacont">
+          <div class="col" id="titulo">Tarjetas</div>
+            <div class="row">
+              <div class="col">
+                {% load static %}
+                <img src="{% static cuentas/img/templatevisa.png %}" alt="Tarjeta Visa ITBank" style="width:400px;">
+                Tarjeta terminada en: 4294
+              <hr>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">{% load static %}<img src="{% static cuentas/img/consulta.png %}" style="height:60px;"></div>
+              <div class="col">{% load static %}<img src="{% static cuentas/img/ultimoscons.png %}" style="height:60px;"></div>
+              <div class="col">{% load static %}<img src="{% static cuentas/img/congelar.png %}" style="height:60px;"></div>
+              <div class="col">{% load static %}<img src="{% static cuentas/img/pagar.png%}" style="height:60px;"></div>
+            </div>
+
+            <div class="row">
+            <div class="col">Consultar resumen</div>
+            <div class="col">Ultimos consumos</div>
+            <div class="col">Congelar tarjeta</div>
+            <div class="col">Pagar</div>
+            </div>
+      </div>
+      
+      <div id="spacer"></div>
+    </div>
+  </div>  
+<br>
+<br>
+<br>
+<hr class="rounded">      
+
+<div class="containerslower">
+  <div class="containerK">
+    <div class="col" id="titulo">Pago de servicios</div>
+    <div class="row">PagoMisCuentas</div>
+    <div class="row">ManuelcoPagos</div>
+  </div>
+      
+  <div id="spacer"></div>
+
+  <div class="containerK">
+    <div class="col" id="titulo">Plazo fijo</div>
+    <div class="row">Plazo fijo flexible</div>
+    <div class="row">Plazo fijo estándar</div>
+    <div class="row">Inversiones</div>
+  </div>
+
+  <div id="spacer"></div>
+
+  <div class="containerK">
+    <div class="col" id="titulo">Prestamos</div>
+    <div class="row">Solicitar un préstamo</div>
+    <div class="row">Asesoría ITBank</div>
+  </div>
+
+  <div id="spacer"></div>
+
+  <div class="containerK">
+    <div class="col" id="titulo">Seguros</div>
+  </div>
+
+  <div id="spacer"></div>
+
+  <div class="containerK">
+    <div class="col" id="titulo">
+    Otros trámites</div>
+  </div>
+</div>
+</div>
+</section>
+{% endblock %}
