@@ -1,17 +1,18 @@
-container{
+body{
+    background-image:url("./fondo.jpeg");
+   
+}
+.container{
+    margin-top: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:flex-start;
+    font-family: "Gill Sans", sans-serif;
     
-    
-    margin: 1em;
 }
 
 input{
     width: 16em;
 }
 
-button{
-    width: 10em;
-}
