@@ -1,10 +1,14 @@
  {% extends 'utils/base.html' %}
  
+ {% load static %}
+ {% block styles %} <link rel="stylesheet" href="{% static 'prestamos/css/styles.css' %}"> {% endblock %}
+
+
  {%block content %}
  <form method='POST'>
     {% csrf_token %}
     {{form.as_p}}
-    <input type='submit' value= 'Submit'/>
+    <button type='submit' class="btn btn-info border-5 text-white" > Submit </button>
  </form>
  {% endblock %}
  
