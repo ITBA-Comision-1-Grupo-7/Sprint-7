@@ -1,5 +1,5 @@
 body{
-    background-image:url("./fondo.jpeg");
+    background-image:url("../img/fondo.jpeg");
     
    
 }
@@ -8,6 +8,8 @@ body{
     margin-top: 3em;
     font-family: "Gill Sans", sans-serif; 
 }
-
+input{
+    margin-top: 0.5em;
+}
 
 

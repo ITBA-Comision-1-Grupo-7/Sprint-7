@@ -19,7 +19,7 @@ class createPrestamo(forms.Form):
       (PRESTAMO_HIPOTECARIO, "Prestamo_Hipotecario"),
     ] 
     valor = forms.CharField(label='Valor del prestamo',widget=forms.TextInput(attrs={'class': 'form-control'}), required= True)
-    tipo_prestamo = forms.CharField(label='Tipo de prestamo',widget=forms.Select(choices=TIPO_PRESTAMO,attrs={'class': 'form-control'}), initial=PRESTAMO_PERSONAL ,required=True)
+    tipo_prestamo = forms.CharField(label=' Tipo de prestamo ',widget=forms.Select(choices=TIPO_PRESTAMO, attrs={'class': 'form-control'}), initial= PRESTAMO_PERSONAL ,required=True)
     estado_prestamo= forms.BooleanField(label= 'Estado',disabled=True,initial= True)
     
    
