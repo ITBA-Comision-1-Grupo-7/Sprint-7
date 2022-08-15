@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 from tarjetas import views as tarjetas_views
 from prestamos import views as prestamo_views
 from cuentas import views 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', login_views.login, name="login"),
