@@ -1,4 +1,9 @@
 from django import forms
-class loginForm(forms.Form):
-    name = forms.CharField(label="Usuario o DNI", required=True)
-    password = forms.CharField(widget=forms.PasswordInput())
+class RegistroForm(forms.Form):
+    cliente_id = forms.CharField(label="cliente_id", required=True)
+    email = forms.CharField(label="email", required=False)
+    pwd = forms.CharField(label="pwd", required=False)
+
+    
+
+

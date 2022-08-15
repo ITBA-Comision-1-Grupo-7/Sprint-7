@@ -20,11 +20,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from tarjetas import views as tarjetas_views
 from prestamos import views as prestamo_views
+from cuentas import views as cuentas_views
+from django.urls import include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', login_views.login, name="login"),
     path('tarjetas/', tarjetas_views.Tarjeta, name="tarjetas"),
-    path('prestamos/', prestamo_views.prestamo, name="prestamos")
+    path('prestamos/', prestamo_views.prestamo, name="prestamos"),
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('registro/',login_views.registro, name="registro"),
 ]
