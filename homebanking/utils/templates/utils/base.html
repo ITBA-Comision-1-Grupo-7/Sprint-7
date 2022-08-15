@@ -6,17 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Estilos y fuentes del template  -->
+   
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
-    {% load static %} {% block styles %} {% endblock %}
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'utils/css/style.css' %}" />
+    {% endblock %}
 
     <title>{% block title %}{% endblock %} | ITBANK Homebanking</title>
   </head>
   <body>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
       <img
         src="{% static '/utils/img/base.jpg' %}"
@@ -54,9 +58,37 @@
           </li>
           
         </ul>
+=======
+  <div class="bg-light">
+    <div class="container text-center ">
+      <div class="row">
+        <div class="col">
+          <img
+            src="{% static '/utils/img/base.jpg' %}"
+            class="img-fluid d-flex align-items-start"
+            style="width: 7em"
+          />
+        </div>
+        <div class="col">
+          <ul class="nav justify-content-center my-2">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'cuentas' %}">Cuenta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'prestamos' %}">Prestamos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'tarjetas' %}">Tarjeta</a>
+            </li>
+          </ul>
+        </div>
+>>>>>>> a215a03f989bcc0da169dcc4aa5d89c3db3c803d
       </div>
-    </nav>
-
+    </div>
+  </div>
     <!--Se inserta el template-->
     {% block content %} {% endblock %}
   </body>

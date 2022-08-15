@@ -20,8 +20,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from tarjetas import views as tarjetas_views
 from prestamos import views as prestamo_views
+<<<<<<< HEAD
 from cuentas import views as cuentas_views
 from django.urls import include
+=======
+from cuentas import views 
+>>>>>>> a215a03f989bcc0da169dcc4aa5d89c3db3c803d
 
 
 urlpatterns = [
@@ -29,6 +33,10 @@ urlpatterns = [
     path('', login_views.login, name="login"),
     path('tarjetas/', tarjetas_views.Tarjeta, name="tarjetas"),
     path('prestamos/', prestamo_views.prestamo, name="prestamos"),
+<<<<<<< HEAD
     path('accounts/',include('django.contrib.auth.urls')),
     path('registro/',login_views.registro, name="registro"),
+=======
+    path('cuentas/', views.Cuenta, name= "cuentas"),
+>>>>>>> a215a03f989bcc0da169dcc4aa5d89c3db3c803d
 ]
