@@ -8,3 +8,5 @@ class Cliente(models.Model):
     idCuenta:models.CharField
     dni:models.CharField
     nombreCompleto:models.CharField(max_length=64)
+    tarjeta:models.CharField(max_length=16)
+    tarjetaUlt:models.CharField(max_length=4)

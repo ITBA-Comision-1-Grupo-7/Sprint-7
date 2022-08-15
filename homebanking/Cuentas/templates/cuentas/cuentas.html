@@ -20,7 +20,7 @@
         <hr>
         <div class="row">
           Saldo:
-          <div class="col" id="saldo" style="font-weight:bold;font-size:18px">$15 202⁹³</div>
+          <div class="col" id="saldo" style="font-weight:bold;font-size:18px">{{Cliente.balance}}</div>
         </div>
       </div>
     
@@ -32,7 +32,7 @@
               src="{% static 'cuentas/img/templatevisa.png' %}"
               style="height: 150px"
             />
-            <div class="row"><div class="col" id="tarjetaLast">Tarjeta terminada en: 4294</div></div>
+            <div class="row"><div class="col" id="tarjetaLast">Tarjeta terminada en: {{Cliente.tarjetaUlt}}</div></div>
             <hr />
             <div class="row">
               <div class="col">
