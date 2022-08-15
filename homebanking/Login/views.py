@@ -3,8 +3,8 @@ from django.urls import reverse
 from .forms import RegistroForm
 from django.contrib.auth.models import User
 ##### CAMBIAR  POR HOME
-def login(request):
-    return render(request, "login/login.html")
+def home(request):
+    return render(request, "login/home.html")
 
 
 

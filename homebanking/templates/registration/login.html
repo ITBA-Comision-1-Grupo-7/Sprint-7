@@ -35,7 +35,7 @@
               name="username"
               autofocus maxlength="254" required
               id="id_username"
-              class="form-control bg-dark border-0"
+              class="form-control bg-dark border-0 text-white"
               placeholder="Ingresa tu usuario o DNI"
               aria-describedby="emailHelp"
             />
@@ -48,12 +48,12 @@
               type="password"
               name="password" required
               id="id_password"
-              class="form-control bg-dark border-0 mb-2"
+              class="form-control bg-dark border-0 mb-2 text-white"
               placeholder="Ingresa tu contraseña"
               
             />
 
-            <a href="{% url 'password_reset' %}" class="form-text text-white">
+            <a href="{% url 'password_reset' %}" class="form-text">
               ¿Olvidaste tu contraseña?
             </a>
           </div>

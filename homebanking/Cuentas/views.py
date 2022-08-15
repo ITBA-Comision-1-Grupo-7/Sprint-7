@@ -1,18 +1,16 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
-=======
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from .models import Cliente
-from login.forms import loginForm
+from login.forms import RegistroForm
 import sqlite3
->>>>>>> a215a03f989bcc0da169dcc4aa5d89c3db3c803d
+
 # Create your views here.
 
 def Cuenta(request):
-    # definitivamente no sé si funciona porque todo se rompe al no tener input
-      Cliente.dni=loginForm.name
+    
+      Cliente.dni=RegistroForm.name
 
       sqliteconnection=sqlite3.connect('db.sqlite3')
     
