@@ -8,15 +8,17 @@
 {% block content %}
 <div class="container">
   <div id="front-titulo">Estado de cuentas</div>
+  <hr />
   <div class="container text-center">
     <div class="row">
       <div class="col">
         <h4>Cuenta</h4>
         <div class="row">Cliente:</div>
         <div class="row">Tipo de cuenta:</div>
+        <hr>
         <div class="row">
           Saldo:
-          <div class="col" id="saldo">$15 202⁹³</div>
+          <div class="col" id="saldo" style="font-weight:bold;font-size:18px">$15 202⁹³</div>
         </div>
       </div>
     
@@ -26,41 +28,42 @@
           <div class="col">
             <img class = "img-fluid"
               src="{% static 'cuentas/img/templatevisa.png' %}"
-              style="height: 60px"
+              style="height: 150px"
             />
-            Tarjeta terminada en: 4294
+            <div class="row"><div class="col" id="tarjetaLast">Tarjeta terminada en: 4294</div></div>
             <hr />
+            <div class="row">
+              <div class="col">
+                <img src="{% static 'cuentas/img/consulta.png' %}" style="height: 60px" />
+              </div>
+              <div class="col">
+                <img
+                  src="{% static 'cuentas/img/ultimoscons.png' %}"
+                  style="height: 60px"
+                />
+              </div>
+              <div class="col">
+                <img src="{% static 'cuentas/img/congelar.png' %}" style="height: 60px" />
+              </div>
+              <div class="col">
+                <img src="{% static 'cuentas/img/pagar.png' %}" style="height: 60px" />
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col">Consultar resumen</div>
+              <div class="col">Ultimos consumos</div>
+              <div class="col">Congelar tarjeta</div>
+              <div class="col">Pagar</div>
+            </div>
+          
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col">
-      <img src="{% static 'cuentas/img/consulta.png' %}" style="height: 60px" />
-    </div>
-    <div class="col">
-      <img
-        src="{% static 'cuentas/img/ultimoscons.png' %}"
-        style="height: 60px"
-      />
-    </div>
-    <div class="col">
-      <img src="{% static 'cuentas/img/congelar.png' %}" style="height: 60px" />
-    </div>
-    <div class="col">
-      <img src="{% static 'cuentas/img/pagar.png' %}" style="height: 60px" />
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">Consultar resumen</div>
-    <div class="col">Ultimos consumos</div>
-    <div class="col">Congelar tarjeta</div>
-    <div class="col">Pagar</div>
-  </div>
-
+  
   <br />
   <br />
   <br />
@@ -68,13 +71,16 @@
 
   <!--flor :) -->
   <div class="container my-2" style="text-align: center;">
-    <h4 class="text-center fw-semibold" id="title_Seccion_Card">QUÉ NOS HACE DIFERENTE</h4>
+    <h4 class="text-center fw-semibold" id="title_Seccion_Card">Qué nos hace diferentes</h4>
+    <br>
+    <br>
     <div class="row row-cols-1 row-cols-md-4 g-4" >
       <div class="col">
         <div class="card h-100 border-light">
           <div class="card-body">
             <div style="text-align: center;" >
-              <i class="fa-solid fa-money-check-dollar fa-2 fa-flip" style="--fa-animation-duration: 10s;"></i>
+              <img src="{% static 'cuentas/img/pago.png' %}" style="height: 50px" />
+              <hr>
               <h4 style="margin-top: 0.25em;">PAGO SERVICIOS</h4>
             </div>
             <p class="card-text">Pago Facil</p>
@@ -86,7 +92,8 @@
         <div class="card h-100 border-light">
           <div class="card-body">
             <div style="text-align: center;" >
-              <i class="fa-solid fa-money-check-dollar fa-2x fa-flip" style="--fa-animation-duration: 10s;"></i>
+              <img src="{% static 'cuentas/img/investment.png' %}" style="height: 50px" />
+              <hr>
               <h4 style="margin-top: 0.25em;">PLAZO FIJO</h4>
             </div>
             <h5 class="card-title text-center"></h5>
@@ -100,7 +107,8 @@
         <div class="card h-100  border-light">
           <div class="card-body ">
             <div style="text-align: center;" >
-              <i class="fa-solid fa-money-check-dollar fa-2x fa-flip" style="--fa-animation-duration: 10s;"></i>
+              <img src="{% static 'cuentas/img/loan.png' %}" style="height: 50px" />
+              <hr>
               <h4 style="margin-top: 0.25em;">PRESTAMOS</h4>
             </div>
             <p class="card-text">Solicitar un prestamo</p>
@@ -112,7 +120,8 @@
         <div class="card h-100  border-light">
           <div class="card-body">
             <div style="text-align: center;" >
-              <i class="fa-solid fa-money-check-dollar fa-2x fa-flip" style="--fa-animation-duration: 10s;"></i>
+              <img src="{% static 'cuentas/img/seguro.png' %}" style="height: 50px" />
+              <hr>
               <h4 style="margin-top: 0.25em;">SEGUROS</h4>
             </div>
             <p class="card-text">Pago Facil</p>
