@@ -12,43 +12,46 @@ import sqlite3
 def Cuenta(request):
 
     Cliente.dni = RegistroForm.cliente_id
+    Cliente.img='classic.png'
 
     sqliteconnection = sqlite3.connect('db.sqlite3')
 
     cursor = sqliteconnection.cursor()
-    cursor.execute(
-        'SELECT customer_name FROM cliente WHERE customer_DNI =' + Cliente.dni)
+    cursor.execute('SELECT customer_name FROM cliente WHERE customer_DNI =' + Cliente.dni)
     Cliente.nombre = cursor.fetchall()
     Cliente.nombre = str(Cliente.nombre[0][0])
-    cursor.execute(
-        'SELECT customer_surname FROM cliente WHERE customer_DNI =' + Cliente.dni)
+    cursor.execute('SELECT customer_surname FROM cliente WHERE customer_DNI =' + Cliente.dni)
     Cliente.apellido = cursor.fetchall()
     Cliente.apellido = str(Cliente.apellido[0][0])
-    cursor.execute(
-        'SELECT customer_id FROM cliente WHERE customer_DNI =' + Cliente.dni)
+    cursor.execute('SELECT customer_id FROM cliente WHERE customer_DNI =' + Cliente.dni)
     Cliente.idCuenta = cursor.fetchall()
     Cliente.idCuenta = str(Cliente.idCuenta[0][0])
-    cursor.execute(
-        'SELECT balance FROM cuenta WHERE customer_id =' + Cliente.idCuenta)
+    cursor.execute('SELECT balance FROM cuenta WHERE customer_id =' + Cliente.idCuenta)
     Cliente.balance = cursor.fetchall()
     Cliente.balance = str(Cliente.balance[0][0])
-    cursor.execute(
-        'SELECT account_type_id FROM cuenta WHERE customer_id =' + Cliente.idCuenta)
+    cursor.execute('SELECT account_type_id FROM cuenta WHERE customer_id =' + Cliente.idCuenta)
     Cliente.tipoCuenta = cursor.fetchall()
     Cliente.tipoCuenta = str(Cliente.tipoCuenta[0][0])
-    cursor.execute(
-        'SELECT card_number FROM tarjetas WHERE card_id =' + Cliente.idCuenta)
+    cursor.execute('SELECT card_number FROM tarjetas WHERE card_id =' + Cliente.idCuenta)
     Cliente.tarjeta = cursor.fetchall()
     Cliente.tarjetaUlt = str(Cliente.tarjeta[0][0])
 
     Cliente.tarjetaUlt = Cliente.tarjeta[-4:]
 
+    Cliente.balancef=float(Cliente.balance)
+    Cliente.balancef=(f"{Cliente.balancef:,.2f}")
+    Cliente.balancef=Cliente.balancef.replace(',',' ')
+    Cliente.balancef=Cliente.balancef.replace('.',',')
+
     if Cliente.tipoCuenta == '1':
         Cliente.tipoCuenta = 'Classic'
+        Cliente.img='classic.png'
     if Cliente.tipoCuenta == '2':
         Cliente.tipoCuenta = 'Gold'
+        Cliente.img='gold.png'
     if Cliente.tipoCuenta == '3':
         Cliente.tipoCuenta = 'Black'
+        Cliente.img='black.png'
     Cliente.nombreCompleto = Cliente.apellido + ', ' + Cliente.nombre
 
     return render(request, "cuentas/cuentas.html", {'Cliente': Cliente})
