@@ -25,6 +25,7 @@ def prestamo(request):
             tipo_prestamo = request.POST.get('tipo_prestamo')
             estado = request.POST.get('estado_prestamo')
             valor = int(request.POST.get('valor'))
+            
             if estado == 'on':
                 estado = True
             else:
