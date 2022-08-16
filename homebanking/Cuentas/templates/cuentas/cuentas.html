@@ -13,14 +13,13 @@
     <div class="row">
       <div class="col">
         <h4>Cuenta</h4>
-        {% comment %} <div class="row">Cliente: {{Cliente.nombreCompleto}}</div>
-        <div class="row">Tipo de cuenta: {{Cliente.tipoCuenta}}</div> {% endcomment %}
-        <div class="row">Cliente:</div>
-        <div class="row">Tipo de cuenta:</div>
+        <div class="row">Cliente: {{Cliente.nombreCompleto}}</div>
+        <div class="row">Tipo de cuenta: {{Cliente.tipoCuenta}}</div>
+
         <hr>
         <div class="row">
           Saldo:
-          <div class="col" id="saldo" style="font-weight:bold;font-size:18px">{{Cliente.balance}}</div>
+          <div class="col" id="saldo" style="font-weight:bold;font-size:18px">{{Cliente.balancef}}</div>
         </div>
       </div>
     
@@ -29,7 +28,7 @@
         <div class="row">
           <div class="col">
             <img class = "img-fluid"
-              src="{% static 'cuentas/img/templatevisa.png' %}"
+              src="{% static {{Cliente.img}} %}"
               style="height: 150px"
             />
             <div class="row"><div class="col" id="tarjetaLast">Tarjeta terminada en: {{Cliente.tarjetaUlt}}</div></div>
