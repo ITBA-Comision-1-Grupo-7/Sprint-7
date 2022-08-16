@@ -39,12 +39,6 @@
             {% load static %}
             <img src="{% static 'cuentas/img/black.png' %}" style="height: 220px"/>
             {% endif %}
-            {% comment %} {% for img in images %}
-            <img src="{% static 'img' %}" style="height: 150px">
-            {% endfor %} {% endcomment %}
-            {% comment %} <img class = "img-fluid"
-              src="{% static {{images}} %}"
-              style="height: 150px" {% endcomment %} 
             <div class="row"><div class="col" id="tarjetaLast">Tarjeta terminada en: {{Cliente.tarjetaUlt}}</div></div>
             <hr />
             <div class="row">
@@ -126,7 +120,7 @@
               <hr>
               <h4 style="margin-top: 0.25em;">PRESTAMOS</h4>
             </div>
-            <p class="card-text">Solicitar un prestamo</p>
+            <p class="card-text "> Para solicitar un prestamo <a class="text-decoration-none" href="{%url 'prestamos' %}"> <br> CLICK AQUI </a></p>
             <p class="card-text">Asesoria ITBANK</p>
           </div>
         </div>
