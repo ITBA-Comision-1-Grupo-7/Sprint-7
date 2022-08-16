@@ -12,3 +12,6 @@ class Cliente(models.Model):
     tarjeta:models.CharField(max_length=16)
     tarjetaUlt:models.CharField(max_length=4)
     img:models.CharField
+    tcc:models.BooleanField
+    tcg:models.BooleanField
+    tcb:models.BooleanField

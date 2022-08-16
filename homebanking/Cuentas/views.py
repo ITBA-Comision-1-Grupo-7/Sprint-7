@@ -5,68 +5,67 @@ from django.views.generic.edit import CreateView
 from .models import Cliente
 from login.form import RegistroForm
 import sqlite3
+import os
 
 # Create your views here.
 
 
 def Cuenta(request):
-    # form = RegistroForm
-    
-    print(request.user)
-    
-    # print(form.fields['cliente_id'])
-    
-    # miCliente = Cliente
+    miCliente = Cliente()   
+    miCliente.dni = request.user
+    miCliente.img='cuentas/img/classic.png'
 
-    # miCliente.dni = form.cleaned_data['cliente_id']
-    
-    # print(miCliente.dni)
-    # miCliente = Cliente()
-    # print(RegistroForm.email)
+    sqliteconnection = sqlite3.connect('db.sqlite3')
 
-    # miCliente.dni = RegistroForm.cliente_id
-    
-    
-    # miCliente.img='classic.png'
+    dniC=str(miCliente.dni)
+    cursor = sqliteconnection.cursor()
+    cursor.execute('SELECT customer_name FROM cliente WHERE customer_DNI =' + dniC)
+    miCliente.nombre = cursor.fetchall()
+    miCliente.nombre = str(miCliente.nombre[0][0])
+    cursor.execute('SELECT customer_surname FROM cliente WHERE customer_DNI =' + dniC)
+    miCliente.apellido = cursor.fetchall()
+    miCliente.apellido = str(miCliente.apellido[0][0])
+    cursor.execute('SELECT customer_id FROM cliente WHERE customer_DNI =' + dniC)
+    miCliente.idCuenta = cursor.fetchall()
+    miCliente.idCuenta = str(miCliente.idCuenta[0][0])
+    cursor.execute('SELECT balance FROM cuenta WHERE customer_id =' + miCliente.idCuenta)
+    miCliente.balance = cursor.fetchall()
+    miCliente.balance = str(miCliente.balance[0][0])
+    cursor.execute('SELECT account_type_id FROM cuenta WHERE customer_id =' + miCliente.idCuenta)
+    miCliente.tipoCuenta = cursor.fetchall()
+    miCliente.tipoCuenta = str(miCliente.tipoCuenta[0][0])
+    cursor.execute('SELECT card_number FROM tarjeta WHERE card_id =' + miCliente.idCuenta)
+    miCliente.tarjeta = cursor.fetchall()
+    miCliente.tarjetaUlt = str(miCliente.tarjeta[0][0])
+    miCliente.tarjetaUlt = miCliente.tarjetaUlt[-4:]
 
-    # sqliteconnection = sqlite3.connect('db.sqlite3')
+    miCliente.balancef=float(miCliente.balance)
+    miCliente.balancef=(f"{miCliente.balancef:,.2f}")
+    miCliente.balancef=miCliente.balancef.replace(',',' ')
+    miCliente.balancef=miCliente.balancef.replace('.',',')
+    miCliente.balancef='$ '+ miCliente.balancef
 
-    # cursor = sqliteconnection.cursor()
-    # cursor.execute('SELECT customer_name FROM cliente WHERE customer_DNI =' + miCliente.dni)
-    # miCliente.nombre = cursor.fetchall()
-    # miCliente.nombre = str(miCliente.nombre[0][0])
-    # cursor.execute('SELECT customer_surname FROM cliente WHERE customer_DNI =' + Cliente.dni)
-    # miCliente.apellido = cursor.fetchall()
-    # miCliente.apellido = str(miCliente.apellido[0][0])
-    # cursor.execute('SELECT customer_id FROM cliente WHERE customer_DNI =' + miCliente.dni)
-    # miCliente.idCuenta = cursor.fetchall()
-    # miCliente.idCuenta = str(miCliente.idCuenta[0][0])
-    # cursor.execute('SELECT balance FROM cuenta WHERE customer_id =' + miCliente.idCuenta)
-    # miCliente.balance = cursor.fetchall()
-    # miCliente.balance = str(miCliente.balance[0][0])
-    # cursor.execute('SELECT account_type_id FROM cuenta WHERE customer_id =' + miCliente.idCuenta)
-    # miCliente.tipoCuenta = cursor.fetchall()
-    # miCliente.tipoCuenta = str(miCliente.tipoCuenta[0][0])
-    # cursor.execute('SELECT card_number FROM tarjetas WHERE card_id =' + miCliente.idCuenta)
-    # miCliente.tarjeta = cursor.fetchall()
-    # miCliente.tarjetaUlt = str(miCliente.tarjeta[0][0])
 
-    # Cliente.tarjetaUlt = Cliente.tarjeta[-4:]
+    if miCliente.tipoCuenta == '1':
+        miCliente.tipoCuenta = 'Classic'
+        miCliente.tcc=True        
+    else:
+        miCliente.tcc=False
+        
+    if miCliente.tipoCuenta == '2':
+        miCliente.tipoCuenta = 'Gold'
+        miCliente.tcg=True
+    else:
+        miCliente.tcg=False
 
-    # Cliente.balancef=float(Cliente.balance)
-    # Cliente.balancef=(f"{Cliente.balancef:,.2f}")
-    # Cliente.balancef=Cliente.balancef.replace(',',' ')
-    # Cliente.balancef=Cliente.balancef.replace('.',',')
+    if miCliente.tipoCuenta == '3':
+        miCliente.tipoCuenta = 'Black'
+        miCliente.tcb=True
+    else:
+        miCliente.tcb=False
 
-    # if Cliente.tipoCuenta == '1':
-    #     Cliente.tipoCuenta = 'Classic'
-    #     Cliente.img='classic.png'
-    # if Cliente.tipoCuenta == '2':
-    #     Cliente.tipoCuenta = 'Gold'
-    #     Cliente.img='gold.png'
-    # if Cliente.tipoCuenta == '3':
-    #     Cliente.tipoCuenta = 'Black'
-    #     Cliente.img='black.png'
-    # Cliente.nombreCompleto = Cliente.apellido + ', ' + Cliente.nombre
+    miCliente.nombreCompleto = miCliente.apellido + ', ' + miCliente.nombre
 
-    # return render(request, "cuentas/cuentas.html", {'Cliente': miCliente})
+    return render(request, "cuentas/cuentas.html", {'Cliente': miCliente})
+
+
