@@ -23,11 +23,13 @@ from prestamos import views as prestamo_views
 from cuentas import views as cuentas_views
 from django.urls import include
 from cuentas import views 
+from django.contrib.auth import views as views_de_jaqueo
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', login_views.home, name="home"),
+    path('', views_de_jaqueo.LoginView.as_view()),
     path('tarjetas/', tarjetas_views.Tarjeta, name="tarjetas"),
     path('prestamos/', prestamo_views.prestamo, name="prestamos"),
     path('accounts/',include('django.contrib.auth.urls')),
