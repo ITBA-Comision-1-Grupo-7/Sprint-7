@@ -19,3 +19,8 @@ homebanking
 
 Hacer correr el proyecto 
  > python3 manager.py runserver
+Cuentas para testing
+  74701370 // 1234 - Classic
+  86870651 // 1234 - Gold
+  40597645 // 1234 - Black
+Para testing aleatorio, usar las tablas Cliente y Tarjeta.
